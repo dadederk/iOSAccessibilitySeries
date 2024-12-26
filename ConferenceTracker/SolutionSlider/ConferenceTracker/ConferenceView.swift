@@ -23,23 +23,14 @@ struct ConferenceView: View {
         VStack(alignment: .leading) {
             Text("How much did you like the conference?")
                 .font(.headline)
-            /// Exercise 2: Add a custom rating component
-//            RatingView(rating: $rating)
-            /// Exercise 1: Add a slider to rate the conference
             Slider(value: $rating,
                    in: 0...5,
                    step: 1.0,
                    label: {
                 Text("Rating")
-            }, onEditingChanged: { _ in
+            }) { _ in
                 conference.rating = rating
-            })
-//            .accessibilityValue("\(Int(rating)) of 5")
-            
-//            Text("\(Int(rating)) of 5")
-//                .font(.footnote)
-//                .foregroundStyle(.secondary)
-//                .accessibilityHidden(true)
+            }
             Spacer()
         }
         .padding()
