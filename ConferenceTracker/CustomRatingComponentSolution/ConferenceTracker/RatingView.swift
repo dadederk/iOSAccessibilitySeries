@@ -43,7 +43,7 @@ struct RatingView: View {
             case .increment:
                 if rating < 5 { rating += 1 }
             case .decrement:
-                if rating > 0 { onEditingChanged?() }
+                if rating > 0 { rating -= 1 }
             @unknown default: break
             }
         })
